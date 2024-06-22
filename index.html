@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1,user-scalable=no"/>
+  <title>:: 딥포커접속주소 ::</title>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: #101012;
+      margin: 0 auto !important;
+      min-width: 320px;
+      padding: 0 !important;
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Lato', sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    .backgroundWrap {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 700px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      z-index: 1;
+      box-shadow: 0 0 10px #000;
+    }
+    .backgroundBackest {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      background: #000;
+    }
+    .backgroundBackest .pc {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      object-fit: contain;
+      opacity: 0;
+      animation: 2s ease-out 0.5s 1 normal forwards running _0dfdb03, 20s ease-in-out 2.5s infinite alternate none running _b341c19;
+    }
+
+    .background {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .bl {
+      opacity: 0.2;
+    }
+
+    .contentWrap {
+      position: relative;
+      z-index: 2;
+      width: 700px;
+      margin: 0 auto;
+    }
+    .title {
+      background: url(/r/logo1.png) no-repeat;
+      width: 510px;
+      height: 159px;
+      text-indent: -99999px;
+      margin: 0 auto;
+      margin-top: 20px;
+      position: relative;
+      background-size: 100% 100%;
+    }
+    .titles {
+      background: url(/r/titles.png) no-repeat;
+      width: 210px;
+      height: 60px;
+      text-indent: -99999px;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .links {
+      transform: translateX(-50%);
+      position: fixed;
+      left: 50%;
+      bottom: 90px;
+    }
+    .linkButton {
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      display: flex;
+      flex-direction: row;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      gap: 15px;
+      color: rgb(255, 255, 255);
+      background: linear-gradient(180deg, #274b57 0%, #161616 100%);
+      margin: 0 auto;
+      font-weight: bolder;
+      overflow: hidden;
+      position: relative;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    .linkButton::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10em;
+      left: -2.5em;
+      background: rgba(255, 255, 255, 0.25);
+      width: 2em;
+      height: 20em;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+      -webkit-transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+
+      -webkit-animation: dfad 8s linear infinite;
+      -moz-animation: dfad 8s linear infinite;
+      -ms-animation: dfad 8s linear infinite;
+      -o-animation: dfad 8s linear infinite;
+      animation: dfad 8s linear infinite;
+    }
+    .linkButton:hover {
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    }
+    .linkButton:hover::before {
+    }
+    .dfdf {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .linkButton p {
+      margin: 0;
+    }
+    .linkTitle {
+      -webkit-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+      text-align: center;
+      font-size: 14px;
+      position: relative;
+    }
+    .linkButton:hover .linkTitle {
+      transform: translateY(3px);
+    }
+    .bottom {
+      position: fixed;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      width: 670px;
+      bottom: 0;
+    }
+    .bottom img {
+      width: 100%;
+    }
+
+    .sub-links {
+      transform: translateX(-50%);
+      position: fixed;
+      left: 50%;
+      bottom: 70px;
+      width: 600px;
+      display: flex;
+    }
+
+    .linkButton2 {
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      display: flex;
+      flex-direction: row;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      gap: 15px;
+      color: rgb(255, 255, 255);
+      background: linear-gradient(180deg, #641f1f 0%, #161616 100%);
+      margin: 0 auto;
+      font-weight: bolder;
+      overflow: hidden;
+      position: relative;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    .linkButton2::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10em;
+      left: -2.5em;
+      background: rgba(255, 255, 255, 0.25);
+      width: 2em;
+      height: 20em;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+      -webkit-transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .linkButton2:hover {
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    }
+    .linkButton2+.linkButton2 {
+      margin-left: 10px;
+    }
+    .linkButton2 p {
+      margin: 0;
+    }
+
+    .linkButton3 {
+      background: url(/r/buttonBack.png) no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      width: 450px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      position: relative;
+      filter: drop-shadow(10px 6px 10px rgba(0, 0, 0, 0.6));
+      -webkit-filter: drop-shadow(10px 6px 10px rgba(0, 0, 0, 0.6));
+      overflow: hidden;
+      border-radius: 200px;
+      -webkit-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    .linkButton3:active {
+      transform: scale(0.97);
+    }
+    .linkButton3::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10em;
+      left: -2.5em;
+      background: rgba(255, 255, 255, 0.25);
+      width: 2em;
+      height: 20em;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+      -webkit-transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: 2;
+    }
+    .linkButton3+.linkButton3 {
+      margin-top: 10px;
+    }
+    .linkButton3.active::before {
+      -webkit-animation: dfad 8s linear infinite;
+      -moz-animation: dfad 8s linear infinite;
+      -ms-animation: dfad 8s linear infinite;
+      -o-animation: dfad 8s linear infinite;
+      animation: dfad 8s linear infinite;
+    }
+
+    .linkButton3 p {
+      margin: 0;
+      color: #0b2e25;
+      font-size: 24px;
+      letter-spacing: -0.4px;
+      font-weight: bolder;
+      position: relative;
+      -webkit-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    .linkButton3:hover p {
+      transform: translateY(3px);
+    }
+
+    .pb1 {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 54px;
+      height: 43px;
+      background: url(/r/pb1.png) no-repeat;
+    }
+    .pb2 {
+      position: absolute;
+      left: 25px;
+      top: 32px;
+      width: 50px;
+      height: 28px;
+      background: url(/r/pb2.png) no-repeat;
+    }
+
+    @media only screen and (max-width: 701px) {
+      .backgroundBackest {
+        display: none;
+      }
+      .contentWrap {
+        width: 100%;
+      }
+      .bottom {
+        width: calc(100% - 30px);
+      }
+      .title {
+        width: 100%;
+        background-size: 100% 100%;
+        height: 22vh;
+      }
+      .titles {
+        top: 18vh;
+      }
+      .linkButton:hover {
+        box-shadow: inset 0 0 0 rgba(0,0,0,0);
+      }
+      .linkButton:hover .linkTitle {
+        transform: translateY(0);
+      }
+
+      .sub-links {
+        width: 100%;
+        display: block;
+      }
+      .linkButton2+.linkButton2 {
+        margin: 0 auto;
+        margin-top: 6px;
+      }
+      .links {
+        bottom: 70px;
+        width: 95%;
+      }
+
+      .linkButton3 {
+        width: 100%;
+      }
+      .pb2 {
+        background-size: 100% 100%;
+        width: 40px;
+        height: 25px;
+        left: 20px;
+        top: 34px;
+      }
+      .pb1 {
+        background-size: 100% 100%;
+        width: 43px;
+        height: 40px;
+        right: 12px;
+        top: 23px;
+      }
+      #b1 p {
+        font-size: 21px;
+      }
+    }
+
+    @-webkit-keyframes dfad {
+      0% {
+        left: -2.5em;
+      }
+      10% {
+        left: 120%;
+      }
+      20% {
+        left: 120%;
+      }
+      30% {
+        left: -2.5em;
+      }
+      40% {
+        left: -2.5em;
+      }
+      50% {
+        left: -2.5em;
+      }
+      55% {
+        left: 120%;
+      }
+      70% {
+        left: 120%;
+      }
+      75% {
+        left: -2.5em;
+      }
+      100% {
+        left: -2.5em;
+      }
+    }
+    @keyframes dfad {
+      0% {
+        left: -2.5em;
+      }
+      10% {
+        left: 120%;
+      }
+      20% {
+        left: 120%;
+      }
+      30% {
+        left: -2.5em;
+      }
+      40% {
+        left: -2.5em;
+      }
+      50% {
+        left: -2.5em;
+      }
+      55% {
+        left: 120%;
+      }
+      70% {
+        left: 120%;
+      }
+      75% {
+        left: -2.5em;
+      }
+      100% {
+        left: -2.5em;
+      }
+    }
+
+    
+
+
+  </style>
+</head>
+<body>
+  <div class="backgroundWrap">
+    <video id="loading-video" class="background" src="/r/1.mp4" muted loop autoplay playsinline></video>
+  </div>
+  <div class="contentWrap">
+    <div class="title">
+      <span>딥포커주소</span>
+      <div class="titles">딥포커평생주소</div>
+    </div>
+    <div class="links">
+      <a href="https://game.deeppoker.co.kr" target="_blank" class="linkButton3" id="b1">
+        <span class="pb1"></span>
+        <span class="pb2"></span>
+        <p>game.deeppoker.co.kr</p>
+      </a>
+      <a href="https://deeppoker1.com" target="_blank" class="linkButton3" id="b1">
+        <span class="pb1"></span>
+        <span class="pb2"></span>
+        <p>deeppoker1.com</p>
+      </a>
+      <a href="https://deeppoker2.com" target="_blank" class="linkButton3" id="b1">
+        <span class="pb1"></span>
+        <span class="pb2"></span>
+        <p>deeppoker2.com</p>
+      </a>
+    </div>
+    <div class="bottom">
+      <img src="/r/bottom2.png"/>
+    </div>
+  </div>
+  <div class="backgroundBackest">
+    <video class="background bl" src="/r/back2.mp4" muted loop autoplay></video>
+  </div>
+  <script>
+      var currentIndex = 1;
+
+      var handleAnimate = function() {
+        document.querySelector('#b' + currentIndex).classList.add('active'); 
+
+        setTimeout(() => {
+          document.querySelector('#b' + currentIndex).classList.remove('active'); 
+          currentIndex++;
+
+          if (currentIndex >= 2)
+            currentIndex = 1;
+            handleAnimate();
+        }, 8000);
+      };
+
+      document.addEventListener("DOMContentLoaded", function() {
+        handleAnimate();
+      });
+  </script>
+</body>
+</html>
