@@ -443,57 +443,22 @@
   </style>
 </head>
 <body>
-  <div class="backgroundWrap">
-    <video id="loading-video" class="background" src="/r/1.mp4" muted loop autoplay playsinline></video>
-  </div>
-  <div class="contentWrap">
-    <div class="title">
-      <span>딥포커주소</span>
-      <div class="titles">딥포커평생주소</div>
-    </div>
-    <div class="links">
-      <a href="https://game.deeppoker.co.kr" target="_blank" class="linkButton3" id="b1">
-        <span class="pb1"></span>
-        <span class="pb2"></span>
-        <p>game.deeppoker.co.kr</p>
-      </a>
-      <a href="https://deeppoker1.com" target="_blank" class="linkButton3" id="b1">
-        <span class="pb1"></span>
-        <span class="pb2"></span>
-        <p>deeppoker1.com</p>
-      </a>
-      <a href="https://deeppoker2.com" target="_blank" class="linkButton3" id="b1">
-        <span class="pb1"></span>
-        <span class="pb2"></span>
-        <p>deeppoker2.com</p>
-      </a>
-    </div>
-    <div class="bottom">
-      <img src="/r/bottom2.png"/>
-    </div>
-  </div>
-  <div class="backgroundBackest">
-    <video class="background bl" src="/r/back2.mp4" muted loop autoplay></video>
-  </div>
-  <script>
-      var currentIndex = 1;
+<div style="background: rgb(255, 255, 255); margin: 0px; position: fixed; inset: 0px; padding: 60px 40px 40px;"></div>
+<div style="
+    z-index: 9999;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px;
+    top: 100px;
+    background: rgb(85, 75, 50);
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+"><a href="https://허슬러접속.com"><img class="content" src="/g1.png"></a><div class="button">닫기</div></div>
 
-      var handleAnimate = function() {
-        document.querySelector('#b' + currentIndex).classList.add('active'); 
-
-        setTimeout(() => {
-          document.querySelector('#b' + currentIndex).classList.remove('active'); 
-          currentIndex++;
-
-          if (currentIndex >= 2)
-            currentIndex = 1;
-            handleAnimate();
-        }, 8000);
-      };
-
-      document.addEventListener("DOMContentLoaded", function() {
-        handleAnimate();
-      });
-  </script>
 </body>
 </html>
